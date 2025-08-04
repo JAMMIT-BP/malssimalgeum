@@ -62,48 +62,95 @@ DEMO_SCENARIOS = {
     }
 }
 
-def get_message_style(status):
-    """메시지 상태에 따른 스타일 반환"""
-    if status == "profanity":
-        return "background-color: #ffebee; border-left: 4px solid #f44336; padding: 10px; margin: 5px 0; border-radius: 5px;"
-    elif status == "filtered":
-        return "background-color: #e8f5e8; border-left: 4px solid #4caf50; padding: 10px; margin: 5px 0; border-radius: 5px;"
-    elif status == "generated":
-        return "background-color: #fff3e0; border-left: 4px solid #ff9800; padding: 10px; margin: 5px 0; border-radius: 5px;"
+def get_message_style(status, role):
+    """메시지 상태와 역할에 따른 스타일 반환"""
+    base_style = "padding: 12px 16px; margin: 8px 0; border-radius: 18px; max-width: 70%; word-wrap: break-word; position: relative;"
+    
+    if role == "customer":
+        # 고객 메시지 (왼쪽 정렬)
+        alignment = "margin-right: auto; margin-left: 0;"
+        if status == "profanity":
+            return f"{base_style} {alignment} background-color: #ffebee; border: 2px solid #f44336; color: #333;"
+        elif status == "filtered":
+            return f"{base_style} {alignment} background-color: #e8f5e8; border: 2px solid #4caf50; color: #333;"
+        else:
+            return f"{base_style} {alignment} background-color: #f0f0f0; color: #333;"
     else:
-        return "background-color: #f5f5f5; padding: 10px; margin: 5px 0; border-radius: 5px;"
+        # CS 담당자 메시지 (오른쪽 정렬)
+        alignment = "margin-left: auto; margin-right: 0;"
+        if status == "generated":
+            return f"{base_style} {alignment} background-color: #fff3e0; border: 2px solid #ff9800; color: #333;"
+        else:
+            return f"{base_style} {alignment} background-color: #007bff; color: white;"
+
+def get_status_icon(status):
+    """상태에 따른 아이콘 반환"""
+    if status == "profanity":
+        return "🚫"
+    elif status == "filtered":
+        return "✅"
+    elif status == "generated":
+        return "🤖"
+    else:
+        return ""
 
 def display_chat_messages(messages, title):
-    """채팅 메시지 표시"""
+    """카카오톡 스타일 채팅 메시지 표시"""
     st.markdown(f"### {title}")
+    
+    # 채팅 컨테이너
+    st.markdown("""
+    <div style="
+        background-color: #f8f9fa; 
+        border-radius: 15px; 
+        padding: 20px; 
+        margin: 10px 0; 
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    ">
+    """, unsafe_allow_html=True)
     
     for msg in messages:
         role_icon = "👤" if msg["role"] == "customer" else "💼"
         role_text = "고객" if msg["role"] == "customer" else "CS 담당자"
-        
-        # 상태에 따른 아이콘
-        status_icon = ""
-        if msg["status"] == "profanity":
-            status_icon = "🚫"
-        elif msg["status"] == "filtered":
-            status_icon = "✅"
-        elif msg["status"] == "generated":
-            status_icon = "🤖"
+        status_icon = get_status_icon(msg["status"])
         
         # 메시지 스타일 적용
-        style = get_message_style(msg["status"])
+        style = get_message_style(msg["status"], msg["role"])
+        
+        # 상태 아이콘을 메시지 옆에 표시
+        status_display = f'<span style="margin-left: 8px; font-size: 14px;">{status_icon}</span>' if status_icon else ""
         
         st.markdown(f"""
-        <div style="{style}">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                <span style="font-weight: bold; color: #333;">
-                    {role_icon} {role_text} {status_icon}
-                </span>
-                <span style="color: #666; font-size: 12px;">{msg['time']}</span>
+        <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+            <div style="
+                {style}
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            ">
+                <div style="
+                    display: flex; 
+                    justify-content: space-between; 
+                    align-items: center; 
+                    margin-bottom: 4px;
+                    font-size: 12px;
+                    color: #666;
+                ">
+                    <span style="font-weight: bold;">
+                        {role_icon} {role_text} {status_display}
+                    </span>
+                    <span>{msg['time']}</span>
+                </div>
+                <div style="
+                    line-height: 1.4; 
+                    font-size: 14px;
+                ">{msg['message']}</div>
             </div>
-            <div style="color: #333; line-height: 1.4;">{msg['message']}</div>
         </div>
         """, unsafe_allow_html=True)
+    
+    st.markdown("</div>", unsafe_allow_html=True)
 
 def main():
     # 헤더
