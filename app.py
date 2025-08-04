@@ -98,24 +98,6 @@ def display_chat_messages(messages, title):
     """카카오톡 스타일 채팅 메시지 표시"""
     st.markdown(f"### {title}")
     
-    # 채팅 컨테이너
-    st.markdown("""
-    <div style="
-        background-color: #f8f9fa; 
-        border-radius: 15px; 
-        padding: 20px; 
-        margin: 10px 0; 
-        min-height: 400px;
-        max-height: 500px;
-        overflow-y: auto;
-        border: 2px solid #e9ecef;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        position: relative;
-        width: 100%;
-        box-sizing: border-box;
-    ">
-    """, unsafe_allow_html=True)
-    
     for msg in messages:
         role_icon = "👤" if msg["role"] == "customer" else "💼"
         role_text = "고객" if msg["role"] == "customer" else "CS 담당자"
@@ -168,16 +150,131 @@ def display_chat_messages(messages, title):
             </div>
         </div>
         """, unsafe_allow_html=True)
-    
-    st.markdown("</div>", unsafe_allow_html=True)
 
 def main():
     # 헤더
     st.markdown("""
-    <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border-radius: 15px; margin-bottom: 30px;">
-        <h1 style="color: #856404; margin: 0; font-size: 2.5em;">💬 말씨맑음 CS 도우미</h1>
-        <p style="color: #856404; margin: 10px 0 0 0; font-size: 20px;">AI 기반 고객 서비스 지원 도구 데모</p>
-        <p style="color: #856404; margin: 5px 0 0 0; font-size: 16px;">언어 감지 • 욕설 필터링 • 실시간 번역 • 답안 생성</p>
+    <div style="
+        text-align: center; 
+        padding: 40px 20px; 
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+        border-radius: 20px; 
+        margin-bottom: 40px;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    ">
+        <h1 style="margin: 0; font-size: 3em; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            💬 말씨맑음 CS 도우미
+        </h1>
+        <p style="margin: 15px 0 0 0; font-size: 22px; opacity: 0.9;">
+            AI 기반 고객 서비스 지원 도구
+        </p>
+        <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.8;">
+            언어 감지 • 욕설 필터링 • 실시간 번역 • 답안 생성
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # 문제상황 섹션
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        padding: 30px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(255,107,107,0.3);
+    ">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.2em;">
+            🚨 CS 상담사의 현실
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">75%</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">상담사의 약 75%가 고객의 공격적인 말투/언행을 경험</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">2.5일</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">2.5일에 한 번 고객 폭언, 월 평균 1.1회의 성희롱 경험</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">47.6%</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">고객 상담사의 47.6%가 자살을 생각해본 적 있음</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">80%</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">3년 간 공공 민원 콜센터 상담사의 80%가 퇴직을 함</p>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # 솔루션 섹션
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(0,184,148,0.3);
+    ">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em;">
+            🌟 오늘의 말씨, 맑음
+        </h2>
+        <p style="text-align: center; font-size: 20px; margin-bottom: 30px; opacity: 0.9;">
+            AI가 상담사의 정신 건강을 지켜드립니다
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🧠 지능형 공격성 감지</h3>
+                <p style="font-size: 16px; line-height: 1.6;">
+                    단순 욕설 필터링을 넘어서 고객의 공격성 수준을 분석하고, 
+                    상황에 맞는 적절한 대응 방안을 제시합니다.
+                </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🔄 스마트 메시지 재구성</h3>
+                <p style="font-size: 16px; line-height: 1.6;">
+                    부적절한 표현을 감지하면 즉시 친절하고 정중한 표현으로 
+                    자동 변환하여 상담사의 스트레스를 줄여줍니다.
+                </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🤖 AI 답변 추천</h3>
+                <p style="font-size: 16px; line-height: 1.6;">
+                    상황을 분석하여 최적의 답변을 실시간으로 추천하고, 
+                    상담사의 업무 효율성을 극대화합니다.
+                </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🌐 다국어 실시간 번역</h3>
+                <p style="font-size: 16px; line-height: 1.6;">
+                    15개 언어를 자동 감지하고 실시간 번역으로 
+                    글로벌 고객과의 원활한 소통을 지원합니다.
+                </p>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # 데모 섹션
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(108,92,231,0.3);
+    ">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em;">
+            🎯 실제 사용 데모
+        </h2>
+        <p style="text-align: center; font-size: 18px; margin-bottom: 30px; opacity: 0.9;">
+            말씨맑음이 어떻게 상담사를 도와주는지 확인해보세요
+        </p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -188,81 +285,113 @@ def main():
         help="다른 언어의 고객 시나리오를 확인해보세요"
     )
     
+    # 구분선
+    st.markdown("""
+    <div style="
+        display: flex;
+        align-items: center;
+        margin: 40px 0;
+        color: #6c5ce7;
+        font-size: 24px;
+        font-weight: bold;
+    ">
+        <div style="flex: 1; height: 3px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 2px;"></div>
+        <span style="margin: 0 20px;">Before & After 비교</span>
+        <div style="flex: 1; height: 3px; background: linear-gradient(90deg, #a29bfe, #6c5ce7); border-radius: 2px;"></div>
+    </div>
+    """, unsafe_allow_html=True)
+    
     # Before/After 비교
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### 🚫 Before (필터링 전)")
-        st.markdown("*욕설이 포함된 원본 메시지*")
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(255,118,117,0.3);
+        ">
+            <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8em;">
+                🚫 Before (필터링 전)
+            </h3>
+            <p style="text-align: center; font-size: 16px; opacity: 0.9;">
+                욕설이 포함된 원본 메시지
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
         display_chat_messages(DEMO_SCENARIOS[language]["before"], "")
     
     with col2:
-        st.markdown("### ✅ After (필터링 후)")
-        st.markdown("*AI가 처리한 개선된 메시지*")
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(0,184,148,0.3);
+        ">
+            <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8em;">
+                ✅ After (필터링 후)
+            </h3>
+            <p style="text-align: center; font-size: 16px; opacity: 0.9;">
+                AI가 처리한 개선된 메시지
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
         display_chat_messages(DEMO_SCENARIOS[language]["after"], "")
     
-    # 기능 설명
-    st.markdown("---")
-    st.markdown("### 🎯 주요 기능")
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background: #e3f2fd; border-radius: 10px;">
-            <h3>🌐 언어 감지</h3>
-            <p>자동으로 15개 언어 감지</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background: #f3e5f5; border-radius: 10px;">
-            <h3>🚫 욕설 필터링</h3>
-            <p>부적절한 표현 자동 감지 및 변환</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col3:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background: #e8f5e8; border-radius: 10px;">
-            <h3>🔄 실시간 번역</h3>
-            <p>다국어 고객과의 원활한 소통</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col4:
-        st.markdown("""
-        <div style="text-align: center; padding: 20px; background: #fff3e0; border-radius: 10px;">
-            <h3>🤖 답안 생성</h3>
-            <p>AI가 친절하고 정중한 답변 생성</p>
-        </div>
-        """, unsafe_allow_html=True)
-    
     # 성능 지표
-    st.markdown("---")
-    st.markdown("### 📊 성능 지표")
-    
-    col1, col2, col3, col4 = st.columns(4)
-    
-    with col1:
-        st.metric("번역 정확도", "98.5%", "↑ 2.3%")
-    
-    with col2:
-        st.metric("응답 시간", "0.8초", "↓ 0.3초")
-    
-    with col3:
-        st.metric("언어 지원", "15개", "↑ 3개")
-    
-    with col4:
-        st.metric("고객 만족도", "4.8/5.0", "↑ 0.4점")
+    st.markdown("""
+    <div style="
+        background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        padding: 40px;
+        border-radius: 20px;
+        margin: 40px 0;
+        color: white;
+        box-shadow: 0 8px 25px rgba(253,203,110,0.3);
+    ">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.2em;">
+            📊 성능 지표
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">98.5%</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">번역 정확도</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">0.8초</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">평균 응답 시간</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">15개</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">지원 언어</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">4.8/5.0</h3>
+                <p style="margin: 10px 0 0 0; font-size: 16px;">고객 만족도</p>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
     # 푸터
-    st.markdown("---")
     st.markdown("""
-    <div style="text-align: center; color: #666; font-size: 14px; padding: 20px;">
-        <p>💡 이 데모는 실제 CS 환경에서 사용되는 AI 기반 도구입니다.</p>
-        <p>언어 감지, 욕설 필터링, 실시간 번역으로 CS 업무 효율성을 극대화하세요!</p>
+    <div style="
+        text-align: center; 
+        padding: 30px; 
+        background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+        border-radius: 20px;
+        color: white;
+        margin-top: 40px;
+    ">
+        <h3 style="margin-bottom: 15px; font-size: 1.5em;">💡 말씨맑음으로 상담사의 정신 건강을 지켜주세요</h3>
+        <p style="font-size: 16px; opacity: 0.8; margin: 0;">
+            언어 감지, 욕설 필터링, 실시간 번역으로 CS 업무 효율성을 극대화하세요!
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
