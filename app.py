@@ -210,54 +210,97 @@ def main():
     """, unsafe_allow_html=True)
     
     # 솔루션 섹션
-    st.markdown("""
-    <div style="
-        background: linear-gradient(135deg, #ffb74d 0%, #ff8f00 100%);
-        padding: 40px;
-        border-radius: 20px;
-        margin-bottom: 40px;
-        color: white;
-        box-shadow: 0 8px 25px rgba(255,183,77,0.3);
-    ">
-        <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em;">
-            🌟 오늘의 말씨, 맑음
-        </h2>
-        <p style="text-align: center; font-size: 20px; margin-bottom: 30px; opacity: 0.9;">
-            AI가 상담사의 정신 건강을 지켜드립니다
-        </p>
+    with st.container():
+        st.markdown("""
+        <div style="
+            background: linear-gradient(135deg, #ffb74d 0%, #ff8f00 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 8px 25px rgba(255,183,77,0.3);
+        ">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em;">
+                🌟 오늘의 말씨, 맑음
+            </h2>
+            <p style="text-align: center; font-size: 20px; margin-bottom: 30px; opacity: 0.9;">
+                AI가 상담사의 정신 건강을 지켜드립니다
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
-                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🧠 지능형 공격성 감지</h3>
-                <p style="font-size: 16px; line-height: 1.6;">
+        # 기능 카드들을 Streamlit 네이티브 방식으로 표시
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown("""
+            <div style="
+                background: rgba(255,183,77,0.9); 
+                padding: 25px; 
+                border-radius: 15px; 
+                margin-bottom: 20px;
+                color: white;
+                box-shadow: 0 4px 15px rgba(255,183,77,0.3);
+            ">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: white;">🧠 지능형 공격성 감지</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: white;">
                     단순 욕설 필터링을 넘어서 고객의 공격성 수준을 분석하고, 
                     상황에 맞는 적절한 대응 방안을 제시합니다.
                 </p>
             </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
-                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🔄 스마트 메시지 재구성</h3>
-                <p style="font-size: 16px; line-height: 1.6;">
+            """, unsafe_allow_html=True)
+            
+            st.markdown("""
+            <div style="
+                background: rgba(255,183,77,0.9); 
+                padding: 25px; 
+                border-radius: 15px; 
+                margin-bottom: 20px;
+                color: white;
+                box-shadow: 0 4px 15px rgba(255,183,77,0.3);
+            ">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: white;">🔄 스마트 메시지 재구성</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: white;">
                     부적절한 표현을 감지하면 즉시 친절하고 정중한 표현으로 
                     자동 변환하여 상담사의 스트레스를 줄여줍니다.
                 </p>
             </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
-                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🤖 AI 답변 추천</h3>
-                <p style="font-size: 16px; line-height: 1.6;">
+            """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("""
+            <div style="
+                background: rgba(255,183,77,0.9); 
+                padding: 25px; 
+                border-radius: 15px; 
+                margin-bottom: 20px;
+                color: white;
+                box-shadow: 0 4px 15px rgba(255,183,77,0.3);
+            ">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: white;">🤖 AI 답변 추천</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: white;">
                     상황을 분석하여 최적의 답변을 실시간으로 추천하고, 
                     상담사의 업무 효율성을 극대화합니다.
                 </p>
             </div>
-            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
-                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🌐 다국어 실시간 번역</h3>
-                <p style="font-size: 16px; line-height: 1.6;">
+            """, unsafe_allow_html=True)
+            
+            st.markdown("""
+            <div style="
+                background: rgba(255,183,77,0.9); 
+                padding: 25px; 
+                border-radius: 15px; 
+                margin-bottom: 20px;
+                color: white;
+                box-shadow: 0 4px 15px rgba(255,183,77,0.3);
+            ">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; color: white;">🌐 다국어 실시간 번역</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: white;">
                     15개 언어를 자동 감지하고 실시간 번역으로 
                     글로벌 고객과의 원활한 소통을 지원합니다.
                 </p>
             </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
     
     # 데모 섹션
     st.markdown("""
