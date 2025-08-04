@@ -4,6 +4,7 @@ import json
 import time
 from datetime import datetime
 import random
+import os
 
 # 페이지 설정
 st.set_page_config(
@@ -13,8 +14,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# GPT API 키 설정
-GPT_API_KEY = "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"
+# GPT API 키 설정 (환경변수에서 가져오기)
+GPT_API_KEY = os.getenv("OPENAI_API_KEY")
+
+if not GPT_API_KEY:
+    st.error("⚠️ OPENAI_API_KEY 환경변수가 설정되지 않았습니다. Streamlit Cloud의 Settings → Secrets에서 설정해주세요.")
+    st.stop()
 
 # OpenAI 클라이언트 설정
 client = openai.OpenAI(api_key=GPT_API_KEY)
