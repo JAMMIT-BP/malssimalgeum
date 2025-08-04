@@ -106,9 +106,10 @@ def display_chat_messages(messages, title):
         padding: 20px; 
         margin: 10px 0; 
         min-height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        max-height: 500px;
+        overflow-y: auto;
+        border: 2px solid #e9ecef;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     ">
     """, unsafe_allow_html=True)
     
@@ -124,10 +125,17 @@ def display_chat_messages(messages, title):
         status_display = f'<span style="margin-left: 8px; font-size: 14px;">{status_icon}</span>' if status_icon else ""
         
         st.markdown(f"""
-        <div style="display: flex; align-items: flex-start; margin-bottom: 12px;">
+        <div style="
+            display: flex; 
+            align-items: flex-start; 
+            margin-bottom: 12px;
+            width: 100%;
+        ">
             <div style="
                 {style}
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                max-width: 75%;
+                min-width: 200px;
             ">
                 <div style="
                     display: flex; 
@@ -145,6 +153,7 @@ def display_chat_messages(messages, title):
                 <div style="
                     line-height: 1.4; 
                     font-size: 14px;
+                    word-wrap: break-word;
                 ">{msg['message']}</div>
             </div>
         </div>
