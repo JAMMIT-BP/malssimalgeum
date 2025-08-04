@@ -21,8 +21,8 @@ if not GPT_API_KEY:
     st.error("⚠️ OPENAI_API_KEY 환경변수가 설정되지 않았습니다. Streamlit Cloud의 Settings → Secrets에서 설정해주세요.")
     st.stop()
 
-# OpenAI 클라이언트 설정
-client = openai.OpenAI(api_key=GPT_API_KEY)
+# OpenAI 클라이언트 설정 (0.28.1 버전용)
+openai.api_key = GPT_API_KEY
 
 # 샘플 CS 대화 데이터
 SAMPLE_CONVERSATIONS = {
@@ -49,7 +49,7 @@ SAMPLE_CONVERSATIONS = {
 def analyze_message_with_gpt(message):
     """GPT를 사용하여 메시지 분석"""
     try:
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {
@@ -88,7 +88,7 @@ def analyze_message_with_gpt(message):
 def generate_cs_answer(user_input):
     """CS 답안 생성"""
     try:
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {
@@ -125,7 +125,7 @@ def generate_cs_answer(user_input):
 def translate_message(message):
     """메시지 번역"""
     try:
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
                 {
