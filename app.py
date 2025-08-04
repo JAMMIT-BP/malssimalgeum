@@ -157,11 +157,11 @@ def main():
     <div style="
         text-align: center; 
         padding: 40px 20px; 
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+        background: linear-gradient(135deg, #ffd93d 0%, #ff6b35 100%); 
         border-radius: 20px; 
         margin-bottom: 40px;
         color: white;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(255,107,53,0.3);
     ">
         <h1 style="margin: 0; font-size: 3em; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
             💬 말씨맑음 CS 도우미
@@ -178,31 +178,31 @@ def main():
     # 문제상황 섹션
     st.markdown("""
     <div style="
-        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        background: linear-gradient(135deg, #ff8a65 0%, #ff7043 100%);
         padding: 30px;
         border-radius: 20px;
         margin-bottom: 40px;
         color: white;
-        box-shadow: 0 8px 25px rgba(255,107,107,0.3);
+        box-shadow: 0 8px 25px rgba(255,138,101,0.3);
     ">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.2em;">
             🚨 CS 상담사의 현실
         </h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">75%</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">75%</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">상담사의 약 75%가 고객의 공격적인 말투/언행을 경험</p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">2.5일</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">2.5일</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">2.5일에 한 번 고객 폭언, 월 평균 1.1회의 성희롱 경험</p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">47.6%</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">47.6%</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">고객 상담사의 47.6%가 자살을 생각해본 적 있음</p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">80%</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">80%</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">3년 간 공공 민원 콜센터 상담사의 80%가 퇴직을 함</p>
             </div>
         </div>
@@ -212,12 +212,12 @@ def main():
     # 솔루션 섹션
     st.markdown("""
     <div style="
-        background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+        background: linear-gradient(135deg, #ffb74d 0%, #ff8f00 100%);
         padding: 40px;
         border-radius: 20px;
         margin-bottom: 40px;
         color: white;
-        box-shadow: 0 8px 25px rgba(0,184,148,0.3);
+        box-shadow: 0 8px 25px rgba(255,183,77,0.3);
     ">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em;">
             🌟 오늘의 말씨, 맑음
@@ -227,28 +227,28 @@ def main():
         </p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
                 <h3 style="font-size: 1.8em; margin-bottom: 15px;">🧠 지능형 공격성 감지</h3>
                 <p style="font-size: 16px; line-height: 1.6;">
                     단순 욕설 필터링을 넘어서 고객의 공격성 수준을 분석하고, 
                     상황에 맞는 적절한 대응 방안을 제시합니다.
                 </p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
                 <h3 style="font-size: 1.8em; margin-bottom: 15px;">🔄 스마트 메시지 재구성</h3>
                 <p style="font-size: 16px; line-height: 1.6;">
                     부적절한 표현을 감지하면 즉시 친절하고 정중한 표현으로 
                     자동 변환하여 상담사의 스트레스를 줄여줍니다.
                 </p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
                 <h3 style="font-size: 1.8em; margin-bottom: 15px;">🤖 AI 답변 추천</h3>
                 <p style="font-size: 16px; line-height: 1.6;">
                     상황을 분석하여 최적의 답변을 실시간으로 추천하고, 
                     상담사의 업무 효율성을 극대화합니다.
                 </p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px;">
+            <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 15px;">
                 <h3 style="font-size: 1.8em; margin-bottom: 15px;">🌐 다국어 실시간 번역</h3>
                 <p style="font-size: 16px; line-height: 1.6;">
                     15개 언어를 자동 감지하고 실시간 번역으로 
@@ -262,12 +262,12 @@ def main():
     # 데모 섹션
     st.markdown("""
     <div style="
-        background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        background: linear-gradient(135deg, #ffcc02 0%, #ff9500 100%);
         padding: 40px;
         border-radius: 20px;
         margin-bottom: 40px;
         color: white;
-        box-shadow: 0 8px 25px rgba(108,92,231,0.3);
+        box-shadow: 0 8px 25px rgba(255,204,2,0.3);
     ">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.5em;">
             🎯 실제 사용 데모
@@ -291,13 +291,13 @@ def main():
         display: flex;
         align-items: center;
         margin: 40px 0;
-        color: #6c5ce7;
+        color: #ff8f00;
         font-size: 24px;
         font-weight: bold;
     ">
-        <div style="flex: 1; height: 3px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); border-radius: 2px;"></div>
+        <div style="flex: 1; height: 3px; background: linear-gradient(90deg, #ffcc02, #ff9500); border-radius: 2px;"></div>
         <span style="margin: 0 20px;">Before & After 비교</span>
-        <div style="flex: 1; height: 3px; background: linear-gradient(90deg, #a29bfe, #6c5ce7); border-radius: 2px;"></div>
+        <div style="flex: 1; height: 3px; background: linear-gradient(90deg, #ff9500, #ffcc02); border-radius: 2px;"></div>
     </div>
     """, unsafe_allow_html=True)
     
@@ -307,12 +307,12 @@ def main():
     with col1:
         st.markdown("""
         <div style="
-            background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+            background: linear-gradient(135deg, #ff7043 0%, #ff5722 100%);
             padding: 25px;
             border-radius: 20px;
             margin-bottom: 20px;
             color: white;
-            box-shadow: 0 8px 25px rgba(255,118,117,0.3);
+            box-shadow: 0 8px 25px rgba(255,112,67,0.3);
         ">
             <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8em;">
                 🚫 Before (필터링 전)
@@ -327,12 +327,12 @@ def main():
     with col2:
         st.markdown("""
         <div style="
-            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            background: linear-gradient(135deg, #ffb74d 0%, #ff8f00 100%);
             padding: 25px;
             border-radius: 20px;
             margin-bottom: 20px;
             color: white;
-            box-shadow: 0 8px 25px rgba(0,184,148,0.3);
+            box-shadow: 0 8px 25px rgba(255,183,77,0.3);
         ">
             <h3 style="text-align: center; margin-bottom: 20px; font-size: 1.8em;">
                 ✅ After (필터링 후)
@@ -347,31 +347,31 @@ def main():
     # 성능 지표
     st.markdown("""
     <div style="
-        background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        background: linear-gradient(135deg, #ffcc02 0%, #ff9500 100%);
         padding: 40px;
         border-radius: 20px;
         margin: 40px 0;
         color: white;
-        box-shadow: 0 8px 25px rgba(253,203,110,0.3);
+        box-shadow: 0 8px 25px rgba(255,204,2,0.3);
     ">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.2em;">
             📊 성능 지표
         </h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">98.5%</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">98.5%</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">번역 정확도</p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">0.8초</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">0.8초</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">평균 응답 시간</p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">15개</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">15개</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">지원 언어</p>
             </div>
-            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h3 style="font-size: 2.5em; margin: 0; color: #ffeaa7;">4.8/5.0</h3>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 2.5em; margin: 0; color: #fff3e0;">4.8/5.0</h3>
                 <p style="margin: 10px 0 0 0; font-size: 16px;">고객 만족도</p>
             </div>
         </div>
@@ -383,13 +383,14 @@ def main():
     <div style="
         text-align: center; 
         padding: 30px; 
-        background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+        background: linear-gradient(135deg, #ff8f00 0%, #ff6f00 100%);
         border-radius: 20px;
         color: white;
         margin-top: 40px;
+        box-shadow: 0 8px 25px rgba(255,143,0,0.3);
     ">
         <h3 style="margin-bottom: 15px; font-size: 1.5em;">💡 말씨맑음으로 상담사의 정신 건강을 지켜주세요</h3>
-        <p style="font-size: 16px; opacity: 0.8; margin: 0;">
+        <p style="font-size: 16px; opacity: 0.9; margin: 0;">
             언어 감지, 욕설 필터링, 실시간 번역으로 CS 업무 효율성을 극대화하세요!
         </p>
     </div>
