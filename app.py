@@ -64,7 +64,7 @@ DEMO_SCENARIOS = {
 
 def get_message_style(status, role):
     """메시지 상태와 역할에 따른 스타일 반환"""
-    base_style = "padding: 12px 16px; margin: 8px 0; border-radius: 18px; word-wrap: break-word; position: relative;"
+    base_style = "padding: 12px 16px; margin: 8px 0; border-radius: 18px; word-wrap: break-word; position: relative; box-sizing: border-box;"
     
     if role == "customer":
         # 고객 메시지 (왼쪽 정렬)
@@ -111,6 +111,8 @@ def display_chat_messages(messages, title):
         border: 2px solid #e9ecef;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         position: relative;
+        width: 100%;
+        box-sizing: border-box;
     ">
     """, unsafe_allow_html=True)
     
@@ -132,13 +134,17 @@ def display_chat_messages(messages, title):
             margin-bottom: 12px;
             width: 100%;
             position: relative;
+            box-sizing: border-box;
         ">
             <div style="
                 {style}
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                max-width: 80%;
-                min-width: 150px;
+                max-width: 75%;
+                min-width: 120px;
                 position: relative;
+                box-sizing: border-box;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             ">
                 <div style="
                     display: flex; 
